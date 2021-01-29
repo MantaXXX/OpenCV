@@ -2,14 +2,15 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread('test17.png')
-img1 = cv2.imread('test16.png')
+img = cv2.imread('../image/test17.png')
+img1 = cv2.imread('../image/test16.png')
 
-kernel = np.ones((5, 5), np.uint8)  # 卷积核
+kernel = np.ones((5, 5), np.uint8)  # 5x5 的卷积核
 kernel2 = np.ones((10, 10), np.uint8)  # 卷积核
 
-erosion = cv2.erode(img, kernel, iterations=1)  # 腐蚀
-dilation = cv2.dilate(img, kernel, iterations=1)  # 膨胀
+# iterations=1，腐蝕 1 次
+erosion = cv2.erode(img, kernel, iterations=1)  # 腐蚀，清除多餘的
+dilation = cv2.dilate(img, kernel, iterations=1)  # 膨胀，填滿缺少的
 opening = cv2.morphologyEx(img1, cv2.MORPH_OPEN, kernel)  # 开运算
 closing = cv2.morphologyEx(img1, cv2.MORPH_CLOSE, kernel)  # 闭运算
 gradient = cv2.morphologyEx(img, cv2.MORPH_GRADIENT, kernel)  # 形态学梯度

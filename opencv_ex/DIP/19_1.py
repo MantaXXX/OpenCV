@@ -2,7 +2,8 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread('test3.jpg', 0)
+img = cv2.imread('../image/test6.jpg', 0)
+# 第一參數「minVal」, 第二參數「maxVal」
 edges = cv2.Canny(img, 50, 100)
 edges2 = cv2.Canny(img, 50, 150)
 edges3 = cv2.Canny(img, 50, 200)

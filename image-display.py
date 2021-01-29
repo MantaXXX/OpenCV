@@ -8,8 +8,8 @@ from matplotlib import pyplot as plt
 img = cv2.imread('./cat.jpg', 1)
 
 # 切塊置換[y2:y1, x2:x1]
-roi = img[400:1500, 1300:2800]
-img[500:1600, 0:1500] = roi
+# roi = img[400:1500, 1300:2800]
+# img[500:1600, 0:1500] = roi
 
 px = img[100, 100] = [0, 0, 0]
 print(px)
